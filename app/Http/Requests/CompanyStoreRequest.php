@@ -26,7 +26,7 @@ class CompanyStoreRequest extends FormRequest
         return [
             'name' => 'required|max:191',
             'email' => 'required|email|unique:companies',
-            'photo_id' => 'required|dimensions:min_width=100,min_height=100',
+            'photo_id' => 'required|image|mimes:jpeg,png,jpg,gif,svg|dimensions:min_width=100,min_height=100',
             'website' => 'max:191'
         ];
     }

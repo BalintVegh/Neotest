@@ -28,7 +28,8 @@ class EmployeeRequest extends FormRequest
             'company_id' => 'required',
             'email' => 'required|email|unique:employees,id,:id',
             'phone' => 'required|regex:/[+]{1}[3]{1}[6]{1}(\s?)[\d]{1,13}$/|max:17',
-            'post' => 'required'
+            'post' => 'required',
+            'photo_id' => 'image|mimes:jpeg,png,jpg,gif,svg|dimensions:min_width=100,min_height=100'
         ];
     }
 }

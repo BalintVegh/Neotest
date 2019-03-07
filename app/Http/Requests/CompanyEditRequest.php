@@ -25,8 +25,8 @@ class CompanyEditRequest extends FormRequest
     {
         return [
             'name' => "required|max:191",
-            'emails' => 'required|emails|unique:companies,id,:id',
-            'photo_id' => 'dimensions:min_width=100,min_height=100',
+            'email' => 'required|email|unique:companies,id,:id',
+            'photo_id' => 'image|mimes:jpeg,png,jpg,gif,svg|dimensions:min_width=100,min_height=100',
             'website' => 'max:191'
         ];
     }
